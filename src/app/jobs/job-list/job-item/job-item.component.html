@@ -1,0 +1,35 @@
+<div (click)="openJobDetailsDialog"
+  
+  class="rounded-lg flex justify-center items-center gap-3 w-full h-48 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500"
+>
+  <!-- [ngClass]="{
+    'card h-100 pb-3': true,
+    highlightEdit: adminUser && product.stock < 35
+  }" -->
+
+  <!-- <img class="w-[70%] h-[220px] rounded-lg" [src]="job.cover" alt="job.title" /> -->
+  <div class="w-1/2 pl-2">
+    <div class="text-start">
+      <span class="text-md font-bold">Title: </span>
+      <span class="text-[14px]">{{ job.title }}</span>
+    </div>
+    <div class="text-start">
+      <span class="text-md font-bold">Location: </span>
+      <span class="text-[14px]">{{ job.location ? job.location : "N/A" }}</span>
+    </div>
+    <div class="text-start">
+      <span class="text-md font-bold">Date: </span>
+      <span class="text-[14px]">{{
+        job.date_published | date : "dd/MM/yyyy"
+      }}</span>
+    </div>
+  </div>
+  <div class="w-1/2">
+    <div class="text-start">
+      <span class="text-md font-bold">Description: </span>
+      <span class="text-[14px]">{{
+        job.description ? job.description : "-"
+      }}</span>
+    </div>
+  </div>
+</div>
